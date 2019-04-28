@@ -1,0 +1,117 @@
+/*
+Web 2.0 & Mobile Interaction -- Final Project
+December 4, 2009
+
+Olivier Jais-Nielsen (s090763)
+Andrea Lai (s091088)
+
+The Enhanced Feed Reader uses latent semantic analysis to identify people, organizations, and places within an RSS feed and pull in relevant additional content (Google Maps, Google Search, and recent tweets) for display. 
+
+Additionally, items identified as entities in the feed can be analyzed for similarity and associations within the elements -- this generates a tag cloud for easier visualization
+*/
+
+a{
+    text-decoration: none;
+    color: #336666;
+}
+   
+
+body {
+    margin: 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#entities {
+    position: fixed;
+    z-index: 2;
+    white-space: nowrap;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    overflow: auto;
+}
+
+#entities ul {
+    white-space: nowrap;
+    display: inline;
+}
+
+#entities ul li {
+    display: inline;
+}
+
+#entries {
+    background-color: white;
+    position: absolute;
+    top: 50px;
+}
+
+li {
+    background-color: inherit;
+    font-size: 12px;
+}
+
+h1{
+    font-size: 22px;
+}
+
+h2{
+    font-size: 14px;
+    font-color: #555555;
+}    
+   
+li.EVEN {
+    background-color: #dddddd;
+}
+
+li.ENTRY {
+    float: left;
+}
+
+div.MAIN {
+    float: left;
+    width: 75%;
+}
+div.EXTRA {
+    float: left;
+    width: 25%;
+}
+
+div.MAIN, div.EXTRA, div.EXTRA ul, div.EXTRA ul li {
+    background-color: inherit;
+}
+
+div.EXTRA a:hover{
+    color: #333366;
+}
+    
+div.EXTRA ul li {
+    position: relative;
+    display: none;
+}
+
+div.EXTRA ul li li {
+    display: inline;
+}
+    
+span.ENTITY {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+span.ENTITY:hover {
+    color: #336666;
+}
+
+span.SELECTED {
+    background-color: #FFFFCC;
+}
+
+.MAP {
+    width: 100%;
+}
+
